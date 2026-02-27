@@ -1,0 +1,36 @@
+services:
+  fastapi-app:
+    build: 
+      context: .
+    image: multiview-enigma
+    container_name: fastapi_app
+    ports:
+      - "8002:8002"
+    depends_on:
+      - redis
+    volumes:
+      - .:/multiview-enigma
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    command: conda run -n multiview-enigma uvicorn src.main:app --host 0.0.0.0 --port 8002
+
+  celery-worker:
+    image: multiview-enigma
+    container_name: celery_worker
+    depends_on:
+      - redis
+    volumes:
+      - .:/multiview-enigma
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    command: conda run -n multiview-enigma celery -A src.worker.app worker --loglevel=info --concurrency=1
+
+  redis:
+    image: redis
+    container_name: redis_broker
+    ports:
+      - "6379:6379"

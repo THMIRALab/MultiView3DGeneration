@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+numpy
+enlighten
+open3d
+python-multipart
+opencv-python
+scikit-image
+trimesh
+celery 
+redis

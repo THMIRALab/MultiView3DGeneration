@@ -1,0 +1,73 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+abseil-cpp/
+ceres-solver/
+colmap/
+
+# Python packaging / build artifacts
+.Python
+build/
+dist/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test, lint, and type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment and local Docker overrides
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+
+# Logs and runtime output
+*.log
+logs/
+app/logs/
+app/output/
+app/input/
+
+# C/C++ / CMake build artifacts
+**/build/
+**/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+Testing/
+install_manifest.txt
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.lib
+*.exe
