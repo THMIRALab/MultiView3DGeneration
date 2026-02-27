@@ -1,4 +1,4 @@
-# 3D Model Generation
+# Multi-View Image to 3D Generation
 
 ![Multi-View Image to 3D Example](./MultiViewExample.png)
 
